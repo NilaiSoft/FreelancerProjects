@@ -1,0 +1,71 @@
+﻿@model IEnumerable<FreelancerProjects.Models.ViewModels.ProjectModel>
+
+@{
+    ViewData["Title"] = "FreelancerApplyed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5 style="color:orangered;">Projects selected by the freelancer</h5>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreelancerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlatformDevelop.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDateTime)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FreelancerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlatformDevelop.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDateTime)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+
+                    @Html.ActionLink("FreelancerApplyedDetails", "FreelancerApplyedDetails", new { id = item.ProjectFreelancerMappings.Id })
+
+                    @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+                @if (item.ProjectFreelancerMappings.IsApplyed)
+                {
+                    <td>
+                        @Html.ActionLink("Project Logs", "ProjectLogs", new { id = item.Id })
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

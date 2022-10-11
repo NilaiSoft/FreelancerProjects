@@ -1,0 +1,52 @@
+﻿@model FreelancerProjects.Models.ViewModels.ProjectModel
+
+@{
+	ViewData["Title"] = "FreelancerApplyedDetails";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5 style="color:orangered;">Accepting or not accepting the freelancer's request</h5>
+
+<hr />
+<form asp-controller="Project" asp-action="FreelancerApplyedDetails" method="post" enctype="multipart/form-data">
+	<input type="hidden" asp-for="ProjectFreelancerMappings.Id" />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Description)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Description)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.PlatformDevelop.Name)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.PlatformDevelop.Name)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CreateDateTime)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CreateDateTime)
+		</dd>
+	</dl>
+	<div>
+		@{
+			if (!Model.ProjectFreelancerMappings.IsApplyed)
+			{
+				<input type="submit" value="Apply" class="btn btn-info" />
+			}
+			else
+			{
+				<input type="submit" value="Remove Apply" class="btn btn-danger" />
+			}
+		}
+		<a asp-controller="Project" asp-action="FreelancerApplyed">Back to List</a>
+	</div>
+</form>

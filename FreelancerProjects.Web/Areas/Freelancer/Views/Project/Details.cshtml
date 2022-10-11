@@ -1,0 +1,62 @@
+﻿@model FreelancerProjects.Models.ViewModels.ProjectModel
+
+@{
+	ViewData["Title"] = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Project Details</h4>
+<hr />
+
+<form asp-controller="Project" asp-action="Details" method="post" enctype="multipart/form-data">
+	<input type="hidden" asp-for="Id" />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-6" style="">
+            @{ if (Model.ProjectFreelancerMappings == null)
+                {
+                    <input type="text" asp-for="Price" class="form-control" placeholder="ex : 1000$" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                }
+                else
+                {
+                    <label asp-for="@Model.Price" />
+                    @Html.DisplayFor(model => model.ProjectFreelancerMappings.Price)
+                }
+            }
+        </dd>
+    </dl>
+	<div>
+		@{
+			if (Model.ProjectFreelancerMappings == null)
+			{
+				<input type="submit" value="Apply" class="btn btn-info" />
+			}
+			else
+			{
+				<input type="submit" value="Remove Apply" class="btn btn-danger" />
+			}
+		}
+		<a asp-controller="Home" asp-action="Index">Back to List</a>
+	</div>
+</form>

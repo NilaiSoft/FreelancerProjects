@@ -1,0 +1,67 @@
+﻿@model FreelancerProjects.Models.ViewModels.ProjectLogModel
+
+@{
+    ViewData["Title"] = "ProjectLogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5 style="color:orangered">Project Logs</h5>
+
+<p>
+    <a asp-action="CreateProjectLogs" asp-route-id="@Model.ProjectId">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatorUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descriptions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsClose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ProjectLogModels)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatorUserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descriptions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsClose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditProjectLogs", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "DetailsProjectLogs", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "DeleteProjectLogs", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

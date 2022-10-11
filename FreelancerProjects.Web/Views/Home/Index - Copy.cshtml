@@ -1,0 +1,156 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ustora Demo</title>
+
+    <!-- Google Fonts -->
+
+    <link href="~/Ustora/css/Titillium.css" rel="stylesheet" />
+    <link href="~/Ustora/css/Roboto.css" rel="stylesheet" />
+    <link href="~/Ustora/css/Raleway.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/Ustora/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Ustora/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Ustora/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/Ustora/styleUstora.css">
+    <link rel="stylesheet" href="~/Ustora/css/responsive.css">
+</head>
+<body>
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
+                            <li><a href="~/Ustora/cart.html"><i class="fa fa-user"></i> My Cart</a></li>
+                            <li><a href="~/Ustora/checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
+                            <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- End header area -->
+
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a href="./"><img src="~/Ustora/img/logo.png"></a></h1>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="~/Ustora/cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End site branding area -->
+
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="~/Ustora/index.html">Home</a></li>
+                        <li><a href="~/Ustora/shop.html">Shop page</a></li>
+                        <li><a href="~/Ustora/single-product.html">Single product</a></li>
+                        <li><a href="~/Ustora/cart.html">Cart</a></li>
+                        <li><a href="~/Ustora/checkout.html">Checkout</a></li>
+                        <li><a href="#">Category</a></li>
+                        <li><a href="#">Others</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+
+    <div class="slider-area">
+        <!-- Slider -->
+        <div class="block-slider block-slider4">
+            <ul class="" id="bxslider-home4">
+                <li>
+                    <img src="~/Ustora/img/h4-slide.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            iPhone <span class="primary">6 <strong>Plus</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">Dual SIM</h4>
+                        <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="~/Ustora/img/h4-slide2.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            by one, get one <span class="primary">50% <strong>off</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">school supplies & backpacks.*</h4>
+                        <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="~/Ustora/img/h4-slide3.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            Apple <span class="primary">Store <strong>Ipod</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">Select Item</h4>
+                        <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="~/Ustora/img/h4-slide4.png" alt="Slide">
+                    <div class="caption-group">
+                        <h2 class="caption title">
+                            Apple <span class="primary">Store <strong>Ipod</strong></span>
+                        </h2>
+                        <h4 class="caption subtitle">& Phone</h4>
+                        <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- ./Slider -->
+    </div> <!-- End slider area -->
+
+
+    @await Component.InvokeAsync("CategoryList")
+
+    <!-- Latest jQuery form server -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap JS form CDN -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- jQuery sticky menu -->
+    <script src="~/Ustora/js/owl.carousel.min.js"></script>
+    <script src="~/Ustora/js/jquery.sticky.js"></script>
+    <!-- jQuery easing -->
+    <script src="~/Ustora/js/jquery.easing.1.3.min.js"></script>
+    <!-- Main Script -->
+    <script src="~/Ustora/js/main.js"></script>
+    <!-- Slider -->
+    <script src="~/Ustora/js/bxslider.min.js"></script>
+    <script src="~/Ustora/js/script.slider.js"></script>
+</body>
+</html>

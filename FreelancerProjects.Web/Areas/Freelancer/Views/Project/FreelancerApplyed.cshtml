@@ -1,0 +1,68 @@
+﻿@model IEnumerable<FreelancerProjects.Models.ViewModels.ProjectModel>
+
+@{
+    ViewData["Title"] = "FreelancerApplyed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5 style="color:orangered">List of approved client projects for freelancers</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlatformId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlatformDevelop.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectFreelancerMappings.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectFreelancerMappings.IsApplyed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlatformId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlatformDevelop.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectFreelancerMappings.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectFreelancerMappings.IsApplyed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDateTime)
+                </td>
+                <td>
+                    @Html.ActionLink("Project Logs", "ProjectLogs", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

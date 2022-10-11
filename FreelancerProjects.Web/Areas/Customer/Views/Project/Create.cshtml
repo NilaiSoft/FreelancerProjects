@@ -1,0 +1,21 @@
+﻿@model FreelancerProjects.Models.ViewModels.ProjectModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create New Project</h1>
+<hr />
+
+<form asp-controller="Project" asp-action="Create" method="post" enctype="multipart/form-data">
+    @{
+        await Html.RenderPartialAsync("_CreateOrUpdate", Model);
+    }
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</form>
