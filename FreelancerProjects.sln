@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreelancerProjects.Models",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreelancerProjects.Framework", "FreelancerProjects.Framework\FreelancerProjects.Framework.csproj", "{C1B9C762-F364-4CA5-8817-D057C8F4CE53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreelancerProjects.Test", "FreelancerProjects.Test\FreelancerProjects.Test.csproj", "{BA5222F0-7915-4FF5-8034-9594BDAAAA01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C1B9C762-F364-4CA5-8817-D057C8F4CE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1B9C762-F364-4CA5-8817-D057C8F4CE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1B9C762-F364-4CA5-8817-D057C8F4CE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5222F0-7915-4FF5-8034-9594BDAAAA01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5222F0-7915-4FF5-8034-9594BDAAAA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5222F0-7915-4FF5-8034-9594BDAAAA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5222F0-7915-4FF5-8034-9594BDAAAA01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
