@@ -2,6 +2,7 @@
 using FreelancerProjects.Models;
 using FreelancerProjects.Models.ViewModels;
 using FreelancerProjects.Services;
+using FreelancerProjects.Web.Controllers;
 using FreelancerProjects.Web.Customer.BaseController;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -22,6 +23,18 @@ namespace FreelancerProjects.Test
         [TestMethod]
         public async void CreatePlatform()
         {
+            #region IndexTest
+            //var controller = new HomeController();
+
+            //var result = controller.Index() as ViewResult;
+
+            //Assert.IsNotNull(result);
+            //Assert.IsNotNull(result.Model); // add additional checks on the Model
+            //Assert.IsTrue(string.IsNullOrEmpty(result.ViewName) || result.ViewName == "Index");
+
+            //Assert.AreEqual("Index", result.ViewName);
+            #endregion
+
             var controller =
                 new CustomerBaseController<PlatformDevelop, PlatformDevelopModel>
                 (_platformDevelopRepository, _mapper);
