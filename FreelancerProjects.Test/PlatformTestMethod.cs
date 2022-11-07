@@ -23,7 +23,7 @@ namespace FreelancerProjects.Test
         [TestMethod]
         public async void CreatePlatform()
         {
-            #region IndexTest
+            #region IndexTest1
             //var controller = new HomeController();
 
             //var result = controller.Index() as ViewResult;
@@ -33,6 +33,15 @@ namespace FreelancerProjects.Test
             //Assert.IsTrue(string.IsNullOrEmpty(result.ViewName) || result.ViewName == "Index");
 
             //Assert.AreEqual("Index", result.ViewName);
+            #endregion
+
+            #region IndexTest2
+            //// Arrange
+            //HomeController controller = new HomeController();
+            //// Act
+            //ViewResult result = controller.Index() as ViewResult;
+            //// Assert
+            //Assert.IsNotNull(result);
             #endregion
 
             var controller =
